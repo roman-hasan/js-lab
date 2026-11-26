@@ -1,0 +1,22 @@
+import { studentData } from "./data/students.js";
+import { initializeStudentSearch } from "./features/studentSearch.js";
+
+const students = studentData.students
+
+const studentsContainer = document.querySelector("#students-container");
+const totalStudents = document.querySelector("#total-students");
+const searchInput = document.querySelector("#searchInput");
+
+const renderStudents = (students) => {
+    totalStudents.textContent = students.length
+    studentsContainer.innerHTML = students.map(({id, name, department})=> `
+     <div class="student-card">
+        <span>${id}</span>
+        <h3>${name}</h3>
+        <p>${department}</p>
+     </div>
+    `).join("")
+}
+
+renderStudents(students);
+initializeStudentSearch(students, renderStudents, searchInput);
