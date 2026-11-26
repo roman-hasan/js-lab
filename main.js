@@ -9,13 +9,17 @@ const searchInput = document.querySelector("#searchInput");
 
 const renderStudents = (students) => {
     totalStudents.textContent = students.length
+    if(students.length === 0){
+        studentsContainer.innerHTML = "<h3 class='not-found'>No students found.</h3>";
+    }else{
     studentsContainer.innerHTML = students.map(({id, name, department})=> `
-     <div class="student-card">
+        <div class="student-card">
         <span>${id}</span>
         <h3>${name}</h3>
         <p>${department}</p>
-     </div>
+        </div>
     `).join("")
+    }
 }
 
 renderStudents(students);

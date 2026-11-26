@@ -4,101 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice JS</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-    * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "JetBrains Mono", monospace;
-    }
-
-    body {
-    background: #181818;
-    color: #c5c5c5;
-    font-size: 15px;
-    padding: 30px;
-    line-height: 1.6;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-    font: inherit;
-    }
-
-    button {
-    cursor: pointer;
-    }
-
-    input,
-    select,
-    textarea {
-    background: #222222;
-    color: #c5c5c5;
-    border: 1px solid #383838;
-    outline-offset: 2px;
-    }
-
-    ul{
-    list-style: none;
-    }
-
-    #main{
-    max-width: 1150px;
-    width: 100%;
-    margin: auto;
-    }
-
-    #main > p {
-    margin-left: auto;
-    width: fit-content;
-    }
-
-    #students-container {
-   
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin-top: 15px;
-    }
-
-    .student-card {
-    background: #222;
-    border: 1px solid #414141;
-    border-radius: 8px;
-    padding: 18px;
-    }
-
-    .student-card span {
-    color: #999;
-    font-size: 13px;
-    }
-
-    .student-card h3 {
-    margin: 10px 0 6px;
-    font-size: 17px;
-    }
-
-    .student-card p {
-    color: #aaa;
-    font-size: 14px;
-    }
-    #searchInput{
-        width: inherit;
-        padding: 8px;
-        margin-bottom: 12px;
-    }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
 
 
 <div id="main">
-    <input type="text" id="searchInput" placeholder="Search by name, ID or department...">
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search by name, ID or department...">
+        <div id="suggestions-container"></div>
+    </div>
     <p>Total Students : <span id="total-students"></span></p>
     <div id="students-container"></div>
 </div>
