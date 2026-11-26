@@ -70,6 +70,7 @@ export const initializeStudentSearch = (
     }
 
     if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+       e.preventDefault();
       if (filteredStudents.length === 0) return;
 
       if (e.key === "ArrowDown") {
