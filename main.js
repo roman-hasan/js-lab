@@ -1,4 +1,5 @@
 import { studentData } from "./data/students.js";
+import { initializeStudentCopy } from "./features/studentCopy.js";
 import { initializeStudentSearch } from "./features/studentSearch.js";
 
 const students = studentData.students
@@ -14,6 +15,9 @@ const renderStudents = (students) => {
     }else{
     studentsContainer.innerHTML = students.map(({id, name, department})=> `
         <div class="student-card">
+        <button class="copy-btn" data-id= "${id}">
+          <img src="./assets/copy.png">
+        </button>
         <span>${id}</span>
         <h3>${name}</h3>
         <p>${department}</p>
@@ -24,3 +28,4 @@ const renderStudents = (students) => {
 
 renderStudents(students);
 initializeStudentSearch(students, renderStudents, searchInput);
+initializeStudentCopy(students)

@@ -64,6 +64,7 @@ ul {
     border: 1px solid #414141;
     border-radius: 8px;
     padding: 18px;
+    position: relative;
 }
 
 .student-card span {
@@ -167,4 +168,24 @@ ul {
 
 .suggestion-item.selected {
     background: #303030;
+}
+
+.copy-btn{
+    padding: 4px 8px;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    border: none;
+    outline: none;
+    transition: background 0.2s ease, transform 0.1s ease;
+    background: none;
+}
+
+.copy-btn img{
+    width: 20px;
+    height: 20px;
+}
+
+.copy-btn:active {
+    transform: scale(0.92);
 }
